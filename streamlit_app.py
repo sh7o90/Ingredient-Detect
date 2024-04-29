@@ -3,6 +3,7 @@ import streamlit as st
 import requests
 import base64
 import io
+import numpy as np
 from PIL import Image
 from urllib.parse import urlparse
 from object_detection import detect_objects
@@ -56,8 +57,8 @@ def main():
         # アップロードした画像データを取得
         img_bytes = img_file.getvalue()
 
-        # 画像をPIL Imageに変換
-        img = Image.open(io.BytesIO(img_bytes))
+        # NumPy配列に変換
+        img = np.array(Image.open(io.BytesIO(img_bytes)))
 
         col1, col2 = st.columns(2)
 
