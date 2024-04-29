@@ -67,6 +67,8 @@ def main():
         # 物体検出の実行
         results = detect_objects(img_bytes)
 
+        st.sidebar.write(f"{type(img_bytes)}, {type(img)}, {type(results)},")
+
         with col2:
             st.image(results, use_column_width=True)
 
