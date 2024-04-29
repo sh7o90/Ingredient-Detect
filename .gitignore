@@ -1,0 +1,22 @@
+# Pythonの仮想環境とキャッシュ
+venv/
+__pycache__/
+
+# 一時ファイルとキャッシュ
+*.tmp
+*.temp
+*.log
+
+# Python関連
+*.pyc
+*.pyo
+*.pyd
+
+# プロジェクトで無視するファイル
+tree_file.txt
+
+# その他の無視対象
+.DS_Store  # macOSのシステムファイル
+.idea/     # IntelliJ IDEAの設定ファイル
+.vscode/   # Visual Studio Codeの設定ファイル
+*.swp      # Vimのスワップファイル
