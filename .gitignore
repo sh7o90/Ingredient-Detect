@@ -13,7 +13,7 @@ __pycache__/
 *.pyd
 
 # プロジェクトで無視するファイル
-tree_file.txt
+.tree_file.txt
 
 # その他の無視対象
 .DS_Store  # macOSのシステムファイル

@@ -1,0 +1,30 @@
+C:\Users\sh7ok\Documents\Python\IngredientDetect
+│
+├── tmp
+│   └── [一時ファイル]
+│
+├── venv
+│   └── [仮想環境ファイル]
+│
+├── __pycache__
+│   └── [キャッシュファイル]
+│
+├── .gitattributes        # Git属性ファイル
+│
+├── mybest.pt             # 大きなモデルまたはデータセット
+│
+├── object_detection.py   # オブジェクト検出スクリプト
+│
+├── packages.txt          # パッケージリスト
+│
+├── recipe_functions.py   # レシピ関連スクリプト
+│
+├── requirements.txt      # 必要なPythonパッケージ
+│
+├── streamlit_app.py      # Streamlitアプリケーションスクリプト
+│
+└── yolov8n.pt             # YOLOv8モデル
+
+.gitattributes
+*.lib filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
