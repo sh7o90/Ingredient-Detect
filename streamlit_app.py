@@ -48,6 +48,11 @@ def main():
     img_file = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
     if img_file is not None:
+        # # アップロードした画像の保存
+        # file_path = os.path.join(IMG_TMP, img_file.name)
+        # with open(file_path, "wb") as f:
+        #     f.write(img_file.getvalue())
+
         # アップロードした画像データを取得
         img_bytes = img_file.getvalue()
 
@@ -60,7 +65,7 @@ def main():
         results = detect_objects(img_bytes)
 
         with col2:
-            st.image(img_bytes, use_column_width=True)
+            st.image(results, use_column_width=True)
 
         # 物体検出の結果を表示
         classes = results[0].boxes.cls
