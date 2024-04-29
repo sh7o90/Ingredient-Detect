@@ -40,7 +40,7 @@ def resize_image(image_url, width):
     # リサイズ後の画像URLを返す
     return f"data:image/jpeg;base64,{base64.b64encode(buffer.getvalue()).decode()}"
 
-IMG_TMP = 'tmp'
+# IMG_TMP = 'tmp'
 
 def main():
     st.title("Ingredient Detect")
@@ -49,26 +49,18 @@ def main():
     img_file = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
     if img_file is not None:
-        # # アップロードした画像の保存
-        # file_path = os.path.join(IMG_TMP, img_file.name)
-        # with open(file_path, "wb") as f:
-        #     f.write(img_file.getvalue())
-
-        # アップロードした画像データを取得
-        img_bytes = img_file.getvalue()
-
-        # NumPy配列に変換
-        img = np.array(Image.open(io.BytesIO(img_bytes)))
+        # アップロードした画像の保存
+        file_path = os.path.join("", img_file.name)
+        with open(file_path, "wb") as f:
+            f.write(img_file.getvalue())
 
         col1, col2 = st.columns(2)
 
         with col1:
-            st.image(img, use_column_width=True)
+            st.image(file_path, use_column_width=True)
 
         # 物体検出の実行
-        results = detect_objects(img_bytes)
-
-        st.sidebar.write(f"{type(img_bytes)}, {type(img)}, {type(results)},")
+        results = detect_objects(file_path)
 
         with col2:
             st.image(results, use_column_width=True)
