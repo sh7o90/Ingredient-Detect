@@ -12,11 +12,6 @@ from recipe_functions import (
     en_to_jp,
     jp_to_category_id
 )
-import subprocess
-import sys
-
-# Install required libraries
-subprocess.check_call([sys.executable, "-m", "pip", "install", "libglib2.0-0", "libsm6", "libxrender1", "libxext6"])
 
 def resize_image(image_url, width):
     """
