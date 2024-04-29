@@ -56,10 +56,13 @@ def main():
         # アップロードした画像データを取得
         img_bytes = img_file.getvalue()
 
+        # 画像をPIL Imageに変換
+        img = Image.open(io.BytesIO(img_bytes))
+
         col1, col2 = st.columns(2)
 
         with col1:
-            st.image(img_bytes, use_column_width=True)
+            st.image(img, use_column_width=True)
 
         # 物体検出の実行
         results = detect_objects(img_bytes)
