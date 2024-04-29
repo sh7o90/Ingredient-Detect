@@ -3,7 +3,6 @@ import streamlit as st
 import requests
 import base64
 import io
-import numpy as np
 from PIL import Image
 from urllib.parse import urlparse
 from object_detection import detect_objects
@@ -40,7 +39,7 @@ def resize_image(image_url, width):
     # リサイズ後の画像URLを返す
     return f"data:image/jpeg;base64,{base64.b64encode(buffer.getvalue()).decode()}"
 
-# IMG_TMP = 'tmp'
+IMG_TMP = 'tmp'
 
 def main():
     st.title("Ingredient Detect")
@@ -50,7 +49,7 @@ def main():
 
     if img_file is not None:
         # アップロードした画像の保存
-        file_path = os.path.join("", img_file.name)
+        file_path = os.path.join(IMG_TMP, img_file.name)
         with open(file_path, "wb") as f:
             f.write(img_file.getvalue())
 
@@ -63,7 +62,7 @@ def main():
         results = detect_objects(file_path)
 
         with col2:
-            st.image(results, use_column_width=True)
+            st.image(file_path, use_column_width=True)
 
         # 物体検出の結果を表示
         classes = results[0].boxes.cls

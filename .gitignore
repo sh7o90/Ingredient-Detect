@@ -1,5 +1,4 @@
 # Pythonの仮想環境とキャッシュ
-tmp/
 venv/
 __pycache__/
 
