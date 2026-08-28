@@ -1,8 +1,11 @@
 # Pythonの仮想環境とキャッシュ
 venv/
+.venv/
 __pycache__/
 
 # 一時ファイルとキャッシュ
+tmp/
+runs/
 *.tmp
 *.temp
 *.log
@@ -22,3 +25,8 @@ __pycache__/
 .idea/
 .vscode/
 *.swp
+
+# 秘匿情報・環境変数
+.env
+.streamlit/secrets.toml
+
