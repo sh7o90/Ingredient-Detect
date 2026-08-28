@@ -40,6 +40,7 @@ def resize_image(image_url, width):
     return f"data:image/jpeg;base64,{base64.b64encode(buffer.getvalue()).decode()}"
 
 IMG_TMP = 'tmp'
+os.makedirs(IMG_TMP, exist_ok=True)
 
 def main():
     st.title("Ingredient Detect")
