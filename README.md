@@ -6,8 +6,6 @@
 
 本アプリケーションは、アップロードされた食材画像をYOLOv8モデル（`mybest.pt`）で解析し、検出された食材を用いたレシピを楽天レシピAPI経由で検索・表示します。
 
-🌐 **Web App**: [https://ingredient-detect.streamlit.app/](https://ingredient-detect.streamlit.app/)
-
 ---
 
 ## 🛠 セットアップ & 実行手順
@@ -63,7 +61,6 @@ streamlit run streamlit_app.py
 ```
 
 起動後、自動的にブラウザが開くか、表示された [http://localhost:8501](http://localhost:8501) にアクセスしてください。
-また、公開中のアプリは [https://ingredient-detect.streamlit.app/](https://ingredient-detect.streamlit.app/) からご利用いただけます。
 
 ---
 
